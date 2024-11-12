@@ -1,29 +1,23 @@
-import { Stack, Title, Text, Flex, Container} from "@mantine/core";
+import { Stack, Title, Text, Flex, Container } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import classes from "./Options.module.css";
-import wave from "../../images/Group.svg";
 import OptionsCards from "./OptionsCards";
 
 function MortgageOptions() {
-  const isSmall = useMediaQuery('(max-width: 768px)');
-  const isMedium = useMediaQuery('(max-width: 1200px)');
-  
-  const paddingBottom = isSmall ? '450px' : isMedium ? '250px' : '200px';
+  const isSmall = useMediaQuery("(max-width: 768px)");
+  const isMedium = useMediaQuery("(max-width: 1200px)");
+
+  const paddingBottom = isSmall ? "450px" : isMedium ? "250px" : "200px";
 
   return (
     <div>
       <Stack
         style={{
-          backgroundImage: `url(${wave})`,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundColor: "#0073b2"
         }}
+        pb="xl"
       >
-        <Container
-          mb="xl"
-          pb={paddingBottom} 
-        >
+        <Container>
           <Flex mt="xl" py="xl" gap={3} direction="column">
             <Title c="white" order={3}>
               Find the mortgage that's right for you
@@ -32,7 +26,7 @@ function MortgageOptions() {
               Explore our many mortgage options
             </Text>
           </Flex>
-        <OptionsCards></OptionsCards>
+          <OptionsCards></OptionsCards>
         </Container>
       </Stack>
 

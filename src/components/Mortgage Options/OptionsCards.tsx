@@ -24,15 +24,15 @@ function OptionsCards() {
       desc: "Hello everyone"
     },
     {
-        label: "Mortgage Options",
-        link: "/docs",
-        desc: "Hello everyone"
-      },
-      {
-        label: "Mortgage Options",
-        link: "/docs",
-        desc: "Hello everyone"
-      },
+      label: "Mortgage Options",
+      link: "/docs",
+      desc: "Hello everyone"
+    },
+    {
+      label: "Mortgage Options",
+      link: "/docs",
+      desc: "Hello everyone"
+    }
   ];
 
   return (
@@ -48,7 +48,7 @@ function OptionsCards() {
               target="_blank"
               component="a"
             >
-              <Card.Section withBorder> 
+              <Card.Section withBorder>
                 <Image
                   src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
                   height={130}
@@ -65,11 +65,12 @@ function OptionsCards() {
               </Group>
             </Card>
           </Grid.Col>
-          
         ))}
       </Grid>
       <Button
-        variant="transparent" color="rgba(255, 255, 255, 1)"
+        mb="xl"
+        variant="transparent"
+        color="rgba(255, 255, 255, 1)"
         rightSection={<IconArrowRight size={18} />}
       >
         Explore More Options

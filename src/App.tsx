@@ -26,6 +26,8 @@ function App() {
       myColor
     },
     primaryColor: "myColor",
+    primaryShade: 8,
+    focusRing: 'always',
     components: {
       Anchor: Anchor.extend({
         defaultProps: {
