@@ -1,0 +1,124 @@
+.wrapper {
+    position: relative;
+    padding-top: rem(155px);
+    padding-bottom: rem(145px);
+    overflow: hidden;
+  }
+
+  .wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(https://imagescdn.homes.com/i2/ZdgnGcgmmvTsTUWb2dZ3vvWdTZdFzMngDgpCEGXNOHM/114/three-lakes-miami-fl.jpg?p=1);
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px); 
+    z-index: -1;
+  }
+  
+  .animBlue {
+    background: linear-gradient(to right,
+    #07a478,
+    #1d94fa,
+    #008efb,
+    #007ae1,
+    #006dca,
+    #07a478);
+    color: white;
+    animation: gradientAnimation 12s linear infinite;
+    background-size: 400% 100%;
+  }  
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 400%;
+    }
+  }
+  
+
+  .inner {
+    position: relative;
+    z-index: 1; 
+  }
+  
+  .title {
+    font-weight: 800;
+    font-size: rem(40px);
+    letter-spacing: rem(-0.2px);
+    padding-left: var(--mantine-spacing-md);
+    padding-right: var(--mantine-spacing-md);
+    color: var(--mantine-color-white);
+    margin-bottom: var(--mantine-spacing-xs);
+    text-align: center;
+  }
+  
+  .highlight {
+    color: #3aa2fb;
+  }
+
+  .description {
+    color: var(--mantine-color-gray-0);
+    text-align: center;
+  
+    @media (max-width: $mantine-breakpoint-xs) {
+      font-size: var(--mantine-font-size-md);
+      text-align: left;
+    }
+  }
+  
+  .controls {
+    margin-top: calc(var(--mantine-spacing-xl) * 1.5);
+    display: flex;
+    justify-content: center;
+    padding-left: var(--mantine-spacing-md);
+    padding-right: var(--mantine-spacing-md);
+  
+    @media (max-width: $mantine-breakpoint-xs) {
+      flex-direction: column;
+    }
+  }
+  
+  .control {
+    height: rem(42px);
+    font-size: var(--mantine-font-size-md);
+  
+    &:not(:first-of-type) {
+      margin-left: var(--mantine-spacing-md);
+    }
+  
+    @media (max-width: $mantine-breakpoint-xs) {
+      &:not(:first-of-type) {
+        margin-top: var(--mantine-spacing-md);
+        margin-left: 0;
+      }
+    }
+  }
+  
+  .secondaryControl {
+    color: var(--mantine-color-white);
+    background-color: rgba(255, 255, 255, 0.4);
+  
+    @mixin hover {
+      background-color: rgba(255, 255, 255, 0.45);
+    }
+  }
+
+
+    
+  @media (max-width: $mantine-breakpoint-xs) {
+    .wrapper {
+        padding-top: rem(80px);
+        padding-bottom: rem(50px);
+    }
+
+    .title {
+        font-size: rem(28px);
+        text-align: left;
+    }
+  }

@@ -1,0 +1,7 @@
+.description {
+    color: var(--mantine-color-gray-4);
+}
+
+svg {
+    shape-rendering: crispEdges;
+}
