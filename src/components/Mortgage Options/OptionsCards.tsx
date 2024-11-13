@@ -4,34 +4,34 @@ import { IconArrowRight } from "@tabler/icons-react";
 function OptionsCards() {
   const CardNames = [
     {
-      label: "Mortgage Options",
+      label: "Fixed Rate Mortgages",
       link: "/docs",
-      desc: "Hello everyone"
+      desc: "Low, stable rates, with consistent payments, ideal for long-term homeownership."
     },
     {
-      label: "Mortgage Options",
+      label: "Adjustable Rate Mortgage",
       link: "/docs",
-      desc: "Hello everyone"
+      desc: "Lower initial rates that adjust over time, great for short-term homeownership with rising incomes."
     },
     {
-      label: "Mortgage Options",
+      label: "FHA Loans",
       link: "/docs",
-      desc: "Hello everyone"
+      desc: "Low down payments and easier qualification, perfect for first-time buyers."
     },
     {
-      label: "Mortgage Options",
+      label: "VA Loans",
       link: "/docs",
-      desc: "Hello everyone"
+      desc: "Exclusive low rates and no down payments for veterans and their families."
     },
     {
-      label: "Mortgage Options",
+      label: "Jumbo Loans",
       link: "/docs",
-      desc: "Hello everyone"
+      desc: "Loans for high-value properties that exceed standard limits. Perfect for purchasing luxury homes."
     },
     {
-      label: "Mortgage Options",
+      label: "USDA Loans",
       link: "/docs",
-      desc: "Hello everyone"
+      desc: "Low rates and no down payment for rural homebuyers, ideal for low to moderate-income families."
     }
   ];
 
@@ -59,8 +59,7 @@ function OptionsCards() {
               <Group justify="left" mt="md">
                 <Text fw={500}>{card.label}</Text>
                 <Text size="sm" ta="left" c="dimmed">
-                  With Fjord Tours you can explore more of the magical fjord
-                  landscapes with
+                  {card.desc}
                 </Text>
               </Group>
             </Card>
