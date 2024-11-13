@@ -21,12 +21,13 @@
   
   .animBlue {
     background: linear-gradient(to right,
-    #07a478,
-    #1d94fa,
-    #008efb,
-    #007ae1,
-    #006dca,
-    #07a478);
+    #0085c9,
+    #0085c9,
+    #0073b2,
+    #f05e54,
+    #dc4d43,
+    #0085c9
+    );
     color: white;
     animation: gradientAnimation 12s linear infinite;
     background-size: 400% 100%;
@@ -59,7 +60,7 @@
   }
   
   .highlight {
-    color: #3aa2fb;
+    color: #0085c9;
   }
 
   .description {

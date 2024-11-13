@@ -124,7 +124,7 @@ function NavBar() {
         borderBottom: 'calc(0.0625rem* var(--mantine-scale)) solid var(--mantine-color-gray-3)'
       }}
       animate={appear ? "hidden" : "visible"}
-      transition={{ duration: 0.35, ease: "easeInOut" }}>
+      transition={{ duration: 0.60, ease: "easeInOut" }}>
 
       <Container size="md">
         <div className={classes.inner}>

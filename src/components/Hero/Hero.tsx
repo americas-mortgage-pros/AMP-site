@@ -8,9 +8,14 @@ function Hero() {
       <Overlay color="#000" opacity={0.65} zIndex={1} />
 
       <motion.div 
-        initial={{opacity: 0, scale: 0}}
-        animate={{opacity: 1, scale: 1}}
+      style={{
+        zIndex: 99,
+        position: "relative",
+      }}
+        initial={{opacity: 0, y: 150}}
+        animate={{opacity: 1, y: 0 }}
         >
+          
       <Container size={640} className={classes.inner}>
         <Container p={0} size={530}>
         <Title mb="md" className={classes.title}>
@@ -21,7 +26,6 @@ function Hero() {
 
         </Title>
         </Container>
-
         <Container size={640}>
           <Text size="lg" className={classes.description}>
           We offer reliable, straightforward mortgage services to help
