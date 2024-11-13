@@ -1,29 +1,54 @@
-import { Card, Group, Image, Text } from "@mantine/core";
+import { Card, Group, Image, Text, Badge, Flex, Divider, Box, Center } from "@mantine/core";
+import { IconClock, IconClockHour4Filled } from "@tabler/icons-react";
+import Placeholder from "../../images/adjustable-rate.jpg"
 
 function BlogCard({ item }) {
 
+    let badgeColor;
+    if (item.target === "Realtors") {
+        badgeColor = "teal"
+    } else if (item.target === "First-time homebuyers") {
+        badgeColor = "yellow"
+    } else if (item.target === "Refinance") {
+        badgeColor = "green"
+    }
+
     return (
         <>
-            <Card shadow="sm" padding="lg" radius="sm" withBorder
+            <Card shadow="sm" padding="lg" pb={0} radius="sm" withBorder
                   href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                   target="_blank"
                   component="a">
             <Card.Section>
               <Image
-                src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
+                src={Placeholder}
                 height={200}
                 alt="Norway"
               />
             </Card.Section>
 
-            <Group justify="left" mt="md">
-              <Text h={50} ta="left" fw={500}>{item.link}</Text>
+            <Flex h={280} direction="column" gap="10" justify="left" mt="md">
+            <Badge color={badgeColor} variant="filled">{item.target}</Badge>
+            <Flex justify="start" direction="column" gap="sm" style={{  minHeight: "170px", height: "170px", maxHeight: "170px"}}>
+              <Text ta="left" fw={500}>{item.link}</Text>
               <Text size="sm" ta="left" c="dimmed">
-                  With Fjord Tours you can explore more of the magical fjord
-                  landscapes with
+                  {item.desc}
                 </Text>
-            </Group>
+            </Flex>
+                <Card.Section>
+
+                <Divider orientation="horizontal" size="xs" mt="md" />
+                <Flex px="md" justify="space-between">
+                    
+                <Flex p="md" pl={0} align="center" gap={5} style={{flexBasis: "50%"}} justify="center" > <IconClockHour4Filled size={18} color="#868e96"></IconClockHour4Filled> <Text c="dimmed" size="sm" ta="center">10 Hours Ago</Text></Flex>
+                <Divider orientation="vertical" size="xs"/>
+                <Flex p="md" pr={0} align="center" style={{flexBasis: "50%"}} justify="center"><Text c="dimmed" size="sm" ta="center">5 Min Read</Text></Flex>
+                
+                </Flex>
+                </Card.Section>
+            </Flex>
           </Card>
+  
         </>
     )
 }

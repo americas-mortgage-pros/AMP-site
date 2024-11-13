@@ -7,32 +7,33 @@ import { useEffect, useState } from 'react';
 import { motion, useMotionValue, useMotionValueEvent } from 'motion/react';
 import { useScroll, useTransform } from 'motion/react';
 
+
 const links = [
   {
     link: '#1',
     label: 'Clients',
     links: [
-      { link: '/docs', label: 'Mortgage Options' },
-      { link: '/resources', label: 'Mortgage Calcuator' },
-      { link: '/community', label: 'Apply Online' },
-      { link: '/blog', label: 'First-Time Homebuyers' },
+      { link: '/', label: 'Mortgage Options' },
+      { link: '/', label: 'Mortgage Calcuator' },
+      { link: '/', label: 'Apply Online' },
+      { link: '/', label: 'First-Time Homebuyers' },
     ],
   },
   {
     link: '#2',
     label: 'Brokers',
     links: [
-      { link: '/faq', label: 'Partnerships' },
-      { link: '/demo', label: 'Realtor Training' },
+      { link: '/', label: 'Partnerships' },
+      { link: '/', label: 'Realtor Training' },
     ],
   },
   {
     link: '#3',
     label: 'Recruiting',
     links: [
-      { link: '/faq', label: 'Careers' },
-      { link: '/demo', label: 'AMP Score' },
-      { link: '/forums', label: 'Power of One' },
+      { link: '/', label: 'Careers' },
+      { link: '/', label: 'AMP Score' },
+      { link: '/', label: 'Power of One' },
     ],
   },
 ];
@@ -128,12 +129,13 @@ function NavBar() {
 
       <Container size="md">
         <div className={classes.inner}>
+
           <Image src={AMPLogo} w={110} />
           <Group gap={5} visibleFrom="sm">
             {items}
           <Group ml="sm" gap={10}>
-          <Button>Apply</Button>
-          <Button variant='outline'>Lets Chat</Button>
+          <Button component='a' target='_blank' href='https://jrboston.zipforhome.com/LoanApplication/Contact?Language=E' >Apply</Button>
+          <Button component='a' target='_blank' href='https://calendly.com/jrboston/your-business-success-americas-mortgage-professionals' variant='outline'>Lets Chat</Button>
           </Group>
           </Group>
           

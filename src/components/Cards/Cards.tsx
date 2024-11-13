@@ -11,21 +11,22 @@ function Cards() {
   const CardNames = [
     {
       label: 'Mortgage Options',
-      link: '/docs',
+      link: '/',
       img: `${optionsImage}`
     },
     {
       label: 'Mortgage Calculators',
-      link: '/docs',
+      link: '/',
       img: `${calculatorImage}`
     },
     {
       label: 'Partnerships',
-      link: '/docs',
+      link: '/',
       img: `${partnershipImage}`
     },
     {
       label: 'Loan Orignators',
+      link: '/',
       img: `${careersImage}`
     },
   ]

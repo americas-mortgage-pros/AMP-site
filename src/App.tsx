@@ -1,5 +1,5 @@
 import "./App.css";
-import { createTheme, MantineProvider, Anchor, Container } from "@mantine/core";
+import { createTheme, MantineProvider, Anchor, Container, Stack } from "@mantine/core";
 import "@mantine/core/styles.css";
 import NavBar from "./components/Navigation/NavBar";
 import Hero from "./components/Hero/Hero";
@@ -46,8 +46,10 @@ function App() {
         <Cards></Cards>
       </Container>
       <MortgageOptions></MortgageOptions>
-
+      <Container py="xl" my="xl">
       <ScrollAnimations></ScrollAnimations>
+      </Container>
+      <Container h="100vh"></Container>
     </MantineProvider>
   );
 }

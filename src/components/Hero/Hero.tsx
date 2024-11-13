@@ -34,7 +34,7 @@ function Hero() {
         </Container>
 
         <div className={classes.controls}>
-          <Button className={classes.animBlue} size="lg">
+          <Button component='a' target='_blank' href='https://jrboston.zipforhome.com/LoanApplication/Contact?Language=E' className={classes.animBlue} size="lg">
             Get Started
           </Button>
           

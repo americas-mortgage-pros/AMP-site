@@ -12,37 +12,37 @@ function OptionsCards() {
   const CardNames = [
     {
       label: "Fixed Rate Mortgages",
-      link: "/docs",
+      link: "/",
       desc: "Low, stable rates, with consistent payments, ideal for long-term homeownership.",
       img: `${Fixed}`
     },
     {
       label: "Adjustable Rate Mortgage",
-      link: "/docs",
+      link: "/",
       desc: "Lower initial rates that adjust over time, great for short-term homeownership with rising incomes.",
       img: `${Adjustable}`
     },
     {
       label: "FHA Loans",
-      link: "/docs",
+      link: "/",
       desc: "Low down payments and easier qualification, perfect for first-time buyers.",
       img: `${FHA}`
     },
     {
       label: "VA Loans",
-      link: "/docs",
+      link: "/",
       desc: "Exclusive low rates and no down payments for veterans and their families.",
       img: `${VA}`
     },
     {
       label: "Jumbo Loans",
-      link: "/docs",
+      link: "/",
       desc: "Loans for high-value properties that exceed standard limits. Perfect for purchasing luxury homes.",
       img: `${Jumbo}`
     },
     {
       label: "USDA Loans",
-      link: "/docs",
+      link: "/",
       desc: "Low rates and no down payment for rural homebuyers, ideal for low to moderate-income families.",
       img: `${USDA}`
     }
