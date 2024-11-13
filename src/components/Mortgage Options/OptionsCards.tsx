@@ -1,37 +1,50 @@
 import { Card, Grid, Image, Text, Group, Button } from "@mantine/core";
 import { IconArrowRight } from "@tabler/icons-react";
+import Fixed from "../../images/fixed-rate.webp"
+import Adjustable from "../../images/adjustable-rate.jpg"
+import FHA from "../../images/fha-loan.jpg"
+import VA from "../../images/va-loans.png"
+import Jumbo from "../../images/jumbo-loans.jpg"
+import USDA from "../../images/usda-loans.webp"
+
 
 function OptionsCards() {
   const CardNames = [
     {
       label: "Fixed Rate Mortgages",
       link: "/docs",
-      desc: "Low, stable rates, with consistent payments, ideal for long-term homeownership."
+      desc: "Low, stable rates, with consistent payments, ideal for long-term homeownership.",
+      img: `${Fixed}`
     },
     {
       label: "Adjustable Rate Mortgage",
       link: "/docs",
-      desc: "Lower initial rates that adjust over time, great for short-term homeownership with rising incomes."
+      desc: "Lower initial rates that adjust over time, great for short-term homeownership with rising incomes.",
+      img: `${Adjustable}`
     },
     {
       label: "FHA Loans",
       link: "/docs",
-      desc: "Low down payments and easier qualification, perfect for first-time buyers."
+      desc: "Low down payments and easier qualification, perfect for first-time buyers.",
+      img: `${FHA}`
     },
     {
       label: "VA Loans",
       link: "/docs",
-      desc: "Exclusive low rates and no down payments for veterans and their families."
+      desc: "Exclusive low rates and no down payments for veterans and their families.",
+      img: `${VA}`
     },
     {
       label: "Jumbo Loans",
       link: "/docs",
-      desc: "Loans for high-value properties that exceed standard limits. Perfect for purchasing luxury homes."
+      desc: "Loans for high-value properties that exceed standard limits. Perfect for purchasing luxury homes.",
+      img: `${Jumbo}`
     },
     {
       label: "USDA Loans",
       link: "/docs",
-      desc: "Low rates and no down payment for rural homebuyers, ideal for low to moderate-income families."
+      desc: "Low rates and no down payment for rural homebuyers, ideal for low to moderate-income families.",
+      img: `${USDA}`
     }
   ];
 
@@ -50,9 +63,9 @@ function OptionsCards() {
             >
               <Card.Section withBorder>
                 <Image
-                  src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
-                  height={130}
-                  alt="Norway"
+                  src={card.img}
+                  height={150}
+                  alt={card.label}
                 />
               </Card.Section>
 

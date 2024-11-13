@@ -36,23 +36,23 @@ function Cards() {
       { CardNames.map(card => (
         <Grid.Col span={{ sm: 6, lg: 3 }}>
           <motion.div whileHover={{ scale: 1.05 }}>
-            { /* red color: backgroundColor: "#f05e54"*/ }
-            <Card style={{}}  shadow="sm" padding="lg" radius="sm" withBorder
+            { /* backgroundColor: "#f05e54"*/ }
+            <Card style={{backgroundColor: "#f05e54"}}  shadow="sm" padding="lg" radius="sm" withBorder
                   href=""
                   target="_blank"
                   component="a">
             <Card.Section>
-              <Box pos="relative">
+              { /* <Box pos="relative"> */ }
               <Image
                 src={card.img}
                 height={130}
                 alt="Norway"
-              /> <Overlay gradient="linear-gradient(140deg, rgba(240, 94, 84, 0.5) 0%, rgba(0, 133, 201, 0.5) 100%)" opacity={0.85} zIndex={1}></Overlay>
-              </Box>
+              /> 
+              {/* <Overlay gradient="linear-gradient(140deg, rgba(240, 94, 84, 0.5) 0%, rgba(0, 133, 201, 0.5) 100%)" opacity={0.85} zIndex={1}></Overlay> */}
             </Card.Section>
 
             <Group style={{zIndex: 20}} justify="center" mt="md">
-              <Text fw={500}>{card.label}</Text>
+              <Text c="white" fw={500}>{card.label}</Text>
             </Group>
           </Card>
           </motion.div>
