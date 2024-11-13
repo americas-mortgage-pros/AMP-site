@@ -13,6 +13,7 @@ function Hero() {
       }}
         initial={{opacity: 0, y: 150}}
         animate={{opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
         >
           
       <Container size={640} className={classes.inner}>
@@ -33,9 +34,11 @@ function Hero() {
         </Container>
 
         <div className={classes.controls}>
+          <motion.div initial={{scale: 0}} animate={{scale: 1}} transition={{ duration: 1}}>
           <Button component='a' target='_blank' href='https://jrboston.zipforhome.com/LoanApplication/Contact?Language=E' className={classes.animBlue} size="lg">
             Get Started
           </Button>
+          </motion.div>
           
         </div>
         
