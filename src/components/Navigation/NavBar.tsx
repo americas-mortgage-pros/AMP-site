@@ -3,6 +3,9 @@ import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
 import AMPLogo from "../../images/AMP.png";
 import classes from './NavBar.module.css';
+import { useEffect, useState } from 'react';
+import { motion, useMotionValue, useMotionValueEvent } from 'motion/react';
+import { useScroll, useTransform } from 'motion/react';
 
 const links = [
   {
@@ -37,6 +40,36 @@ const links = [
 function NavBar() {
   const [opened, { toggle }] = useDisclosure(false);  // This handles burger toggle state
   const [drawerOpened, { open, close }] = useDisclosure(false);  // Separate useDisclosure for drawer
+  const [scrolled, setScrolled] = useState(false);
+  const scrollThreshold = 400;
+  const { scrollY } = useScroll();
+  const [appear, setAppear] = useState(false)
+
+  useMotionValueEvent(scrollY, "change", (latest) => 
+  {
+    const previous = scrollY.getPrevious();
+    if (latest > previous && latest > 150) {
+      setAppear(true);
+    } else {
+      setAppear(false);
+    }
+  })
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > scrollThreshold) {
+        setScrolled(true);  
+      } else {
+        setScrolled(false); 
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const items = links.map((link) => {
     const menuItems = link.links?.map((item) => (
@@ -76,7 +109,23 @@ function NavBar() {
   });
 
   return (
-    <header style={{ marginBottom: 0}} className={classes.header}>
+    <header style={{ marginBottom: 0, width:'100%', top: 0, 
+      borderBottom: "0",
+      backgroundColor: 'transparent',
+      position: 'sticky', zIndex:999,  }} className={classes.header}>
+      <motion.div variants={{
+        visbile: { y: "100%" },
+        hidden: { y: "-100% "},
+      }}
+      style={{
+        transition: 'box-shadow 0.3s ease-in-out',
+        backgroundColor:'white',
+        boxShadow: scrolled ? '0 4px 12px rgba(0, 0, 0, 0.1)' : 'none',
+        borderBottom: 'calc(0.0625rem* var(--mantine-scale)) solid var(--mantine-color-gray-3)'
+      }}
+      animate={appear ? "hidden" : "visible"}
+      transition={{ duration: 0.35, ease: "easeInOut" }}>
+
       <Container size="md">
         <div className={classes.inner}>
           <Image src={AMPLogo} w={110} />
@@ -127,7 +176,9 @@ function NavBar() {
           ))}
         </Stack>
       </Drawer>
+      </motion.div>
     </header>
+
   );
 }
 

@@ -2,15 +2,16 @@ import { AnimatePresence, animate, motion, useMotionValue } from "framer-motion"
 import { Text, Image } from "@mantine/core";
 import { useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
+import BlogCard from "./BlogCard";
 
 function ScrollAnimations() {
   const [showOverlay, setShowOverlay] = useState<string | null>(null);
 
   const textArray = [
-    { link: "Hello 1",
+    { link: "Mortgage Myths Busted",
       key: "1"
     },
-    { link: "Hello 2",
+    { link: "5 Tips for first-time home buyers",
       key: "2"
     },
     { link: "Hello 3",
@@ -54,6 +55,8 @@ function ScrollAnimations() {
         width: "100%", overflowX: "hidden", flexDirection: "row"
       }} ref={ref}
     >
+
+      { /*     CARD ARRAY STARTS HERE     */}
       {extendedArray.map((item) => (
         <motion.div key={item.key} onHoverStart={() => {
             setShowOverlay(item.key);
@@ -61,7 +64,7 @@ function ScrollAnimations() {
           onHoverEnd={() => {
             setShowOverlay(null);
           }}
-          style={{ position: "relative", minWidth: "200px", alignItems: "center", display: "flex", flexDirection: "column",
+          style={{ position: "relative", minWidth: "270px", alignItems: "center", display: "flex", flexDirection: "column",
             justifyContent: "center", objectFit: "cover", x: xTranslation
           }}
         >
@@ -80,8 +83,7 @@ function ScrollAnimations() {
               </motion.div>
             )}
           </AnimatePresence>
-          <Image fit="cover" src="https://placehold.co/300x170"></Image>
-          <Text>{item.link}</Text>
+            <BlogCard item={item}></BlogCard>
         </motion.div>
       ))}
     </motion.div>

@@ -29,8 +29,6 @@ function MortgageOptions() {
           <OptionsCards></OptionsCards>
         </Container>
       </Stack>
-
-      <Stack style={{ height: "100vh" }}></Stack>
     </div>
   );
 }
