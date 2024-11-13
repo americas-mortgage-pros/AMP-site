@@ -1,5 +1,5 @@
 import { AnimatePresence, animate, motion, useMotionValue } from "framer-motion";
-import { Text, Image, Button } from "@mantine/core";
+import { Button } from "@mantine/core";
 import { useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
 import BlogCard from "./BlogCard";
@@ -54,11 +54,14 @@ function ScrollAnimations() {
   const xTranslation = useMotionValue(0);
 
   useEffect(() => {
-    let controls;
     let finalPosition = -width / 2 - 7; // 7 is the number of items you have
 
-    controls = animate(xTranslation, [0, finalPosition], { ease: "linear", duration: 25, repeat: Infinity,
-      repeatTypes: "loop", repeatDelay: 0
+    const controls = animate(xTranslation, [0, finalPosition], {
+      ease: "linear",
+      duration: 25,
+      repeat: Infinity,
+      repeatType: "loop",
+      repeatDelay: 0
     });
 
     return controls.stop;

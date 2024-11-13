@@ -1,14 +1,8 @@
 import { Stack, Title, Text, Flex, Container } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
 import classes from "./Options.module.css";
 import OptionsCards from "./OptionsCards";
 
 function MortgageOptions() {
-  const isSmall = useMediaQuery("(max-width: 768px)");
-  const isMedium = useMediaQuery("(max-width: 1200px)");
-
-  const paddingBottom = isSmall ? "450px" : isMedium ? "250px" : "200px";
-
   return (
     <div>
       <Stack

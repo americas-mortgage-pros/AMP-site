@@ -1,11 +1,11 @@
-import { Menu, Group, Center, Burger, Container, Image, Drawer, Button, Stack, Anchor, Paper, Box } from '@mantine/core';
+import { Menu, Group, Center, Burger, Container, Image, Drawer, Button, Stack, Anchor } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
 import AMPLogo from "../../images/AMP.png";
 import classes from './NavBar.module.css';
 import { useEffect, useState } from 'react';
-import { motion, useMotionValue, useMotionValueEvent } from 'motion/react';
-import { useScroll, useTransform } from 'motion/react';
+import { motion, useMotionValueEvent } from 'motion/react';
+import { useScroll } from 'motion/react';
 
 
 const links = [
@@ -39,8 +39,8 @@ const links = [
 ];
 
 function NavBar() {
-  const [opened, { toggle }] = useDisclosure(false);  // This handles burger toggle state
-  const [drawerOpened, { open, close }] = useDisclosure(false);  // Separate useDisclosure for drawer
+  const [opened] = useDisclosure(false);  
+  const [drawerOpened, { open, close }] = useDisclosure(false); 
   const [scrolled, setScrolled] = useState(false);
   const scrollThreshold = 400;
   const { scrollY } = useScroll();
@@ -48,8 +48,8 @@ function NavBar() {
 
   useMotionValueEvent(scrollY, "change", (latest) => 
   {
-    const previous = scrollY.getPrevious();
-    if (latest > previous && latest > 150) {
+    const previous = scrollY.getPrevious() 
+    if (previous !== undefined && latest > previous && latest > 150) {
       setAppear(true);
     } else {
       setAppear(false);
@@ -162,7 +162,7 @@ function NavBar() {
                       pt={5}
                       pb={5}
                       key={subLink.link}
-                      src={subLink.link}
+                      href={subLink.link}
                       onClick={(e) => {
                         e.preventDefault();
                         close(); 

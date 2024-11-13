@@ -1,5 +1,5 @@
 import "./App.css";
-import { createTheme, MantineProvider, Anchor, Container, Stack } from "@mantine/core";
+import { createTheme, MantineProvider, Anchor, Container } from "@mantine/core";
 import "@mantine/core/styles.css";
 import NavBar from "./components/Navigation/NavBar";
 import Hero from "./components/Hero/Hero";
@@ -8,8 +8,7 @@ import MortgageOptions from "./components/Mortgage Options/MortgageOptions";
 import ScrollAnimations from "./components/Blog/Blog"
 
 function App() {
-  const myColor = 
-  [
+  const myColor: [string, string, string, string, string, string, string, string, string, string] = [ 
     "#e5f9ff",
     "#d0efff",
     "#a0ddfd",
@@ -24,7 +23,7 @@ function App() {
 
   const theme = createTheme({
     colors: {
-      myColor
+      myColor,
     },
     primaryColor: "myColor",
     primaryShade: 8,

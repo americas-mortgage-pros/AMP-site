@@ -1,4 +1,4 @@
-import { Card, Grid, Image, Text, Group, Overlay, AspectRatio, Box } from "@mantine/core";
+import { Card, Grid, Image, Text, Group } from "@mantine/core";
 import { motion } from "motion/react";
 import optionsImage from "../../images/mortgage options.png"
 import calculatorImage from "../../images/calculator.jpg"

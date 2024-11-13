@@ -1,8 +1,20 @@
-import { Card, Group, Image, Text, Badge, Flex, Divider, Box, Center } from "@mantine/core";
-import { IconClock, IconClockHour4Filled } from "@tabler/icons-react";
+import { Card, Image, Text, Badge, Flex, Divider } from "@mantine/core";
+import { IconClockHour4Filled } from "@tabler/icons-react";
 import Placeholder from "../../images/adjustable-rate.jpg"
 
-function BlogCard({ item }) {
+interface BlogItem {
+  link: string;
+  key: string;
+  target: string;
+  desc: string;
+}
+
+interface BlogCardProps {
+  item: BlogItem; 
+}
+
+function BlogCard({item} : BlogCardProps) {
+
 
     let badgeColor;
     if (item.target === "Realtors") {

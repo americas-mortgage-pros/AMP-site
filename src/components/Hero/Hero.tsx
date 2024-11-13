@@ -6,7 +6,6 @@ function Hero() {
   return (
     <div className={classes.wrapper}>
       <Overlay color="#000" opacity={0.65} zIndex={1} />
-
       <motion.div 
       style={{
         zIndex: 99,
