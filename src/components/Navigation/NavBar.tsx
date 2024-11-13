@@ -91,7 +91,7 @@ function NavBar() {
               </Center>
             </a>
           </Menu.Target>
-          <Menu.Dropdown>{menuItems}</Menu.Dropdown>
+          <Menu.Dropdown style={{zIndex: 9999}} >{menuItems}</Menu.Dropdown>
         </Menu>
       );
     }
