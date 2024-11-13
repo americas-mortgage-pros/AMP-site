@@ -5,6 +5,7 @@ import NavBar from "./components/Navigation/NavBar";
 import Hero from "./components/Hero/Hero";
 import Cards from "./components/Cards/Cards";
 import MortgageOptions from "./components/Mortgage Options/MortgageOptions";
+import ScrollAnimations from "./components/Blog/Blog"
 
 function App() {
   const myColor = 
@@ -45,6 +46,8 @@ function App() {
         <Cards></Cards>
       </Container>
       <MortgageOptions></MortgageOptions>
+
+      <ScrollAnimations></ScrollAnimations>
     </MantineProvider>
   );
 }
