@@ -7,8 +7,16 @@ function MortgageOptions() {
     <div>
       <Stack
         style={{
-          backgroundColor: "#0073b2"
-        }}
+           backgroundColor: "hsla(201, 100%, 34%, 1)",
+           backgroundImage: "radial-gradient(at 48% 62%, hsla(201, 100%, 34%, 0.7) 0px, transparent 50%), " +
+           "radial-gradient(at 38% 9%, hsla(200, 100%, 39%, 0.5) 0px, transparent 50%), " +
+           "radial-gradient(at 0% 100%, hsla(201, 100%, 34%, 0.5) 0px, transparent 50%), " +
+           "radial-gradient(at 42% 58%, hsla(2, 49%, 54%, 0.8) 0px, transparent 50%), " +
+           "radial-gradient(at 80% 0%, hsla(201, 100%, 34%, 0.5) 0px, transparent 50%), " +
+           "radial-gradient(at 98% 96%, hsla(202, 100%, 44%, 0.5) 0px, transparent 50%), " +
+           "radial-gradient(at 74% 28%, hsla(1, 40%, 65%, 0.5) 0px, transparent 50%), " +
+           "radial-gradient(at 0% 0%, hsla(201, 100%, 34%, 0.5) 0px, transparent 50%)"
+          }}
         pb="xl"
       >
         <Container>
