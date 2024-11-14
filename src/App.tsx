@@ -1,12 +1,16 @@
 import "./App.css";
-import { createTheme, MantineProvider, Anchor, Container } from "@mantine/core";
+import { createTheme, MantineProvider, Anchor, Container} from "@mantine/core";
 import "@mantine/core/styles.css";
+import '@mantine/carousel/styles.css';
 import NavBar from "./components/Navigation/NavBar";
 import Hero from "./components/Hero/Hero";
 import Cards from "./components/Cards/Cards";
 import MortgageOptions from "./components/Mortgage Options/MortgageOptions";
 import ReviewAnimation from "./components/Reviews/Reviews";
 import SeeMoreReviews from "./components/Reviews/SeeMoreReviews";
+import CardScroll from "./components/BlogScroll/BlogScroll";
+
+
 
 function App() {
   const myColor: [string, string, string, string, string, string, string, string, string, string] = [ 
@@ -50,6 +54,8 @@ function App() {
       <ReviewAnimation></ReviewAnimation>
       </Container>
       <SeeMoreReviews></SeeMoreReviews>
+      <CardScroll></CardScroll> 
+      
     </MantineProvider>
   );
 }
