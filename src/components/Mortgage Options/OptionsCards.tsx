@@ -92,6 +92,7 @@ function OptionsCards() {
                 transition={{ duration: 2,
                 delay: card.num * 0.2, }} 
                 layout
+                style={{ height: "100%", maxHeight: "100%"}}
               >
                 <Card
                   shadow="sm"
