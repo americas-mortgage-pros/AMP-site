@@ -1,4 +1,3 @@
-import React from "react";
 import { Carousel } from "@mantine/carousel";
 import { Box, Button, Container, Flex, SegmentedControl, Text, Title } from "@mantine/core";
 import BlogCard from "../Blog/BlogCard";
