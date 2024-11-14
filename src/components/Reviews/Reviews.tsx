@@ -1,4 +1,4 @@
-import { AnimatePresence, animate, motion, useMotionValue } from "framer-motion";
+import { animate, motion, useMotionValue } from "framer-motion";
 import { useEffect } from "react";
 import useMeasure from "react-use-measure";
 import ReviewCard from "./ReviewCard";

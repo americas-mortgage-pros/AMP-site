@@ -7,7 +7,7 @@ interface ReviewItem {
   target: string;
   desc: string;
   date: string;
-  label: { [key: string]: string} | null | undefined;
+  labels?: { [key: string]: string } | null;
 }
 
 interface ReviewItemProps {
@@ -17,8 +17,6 @@ interface ReviewItemProps {
 function ReviewCard({ item }: ReviewItemProps) {
 
   const labels = item.labels ? Object.values(item.labels) : [];
-
-  // Filter out empty labels
   const filteredLabels = labels.filter(label => label.trim() !== "");
 
 

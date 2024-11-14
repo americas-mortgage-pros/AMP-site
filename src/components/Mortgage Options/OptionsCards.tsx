@@ -60,6 +60,9 @@ function OptionsCards() {
     }
   ];
 
+  const defaultValues = { yValInitial: { y: 0, opacity: 0 }, yValAnimate: { y: 0, opacity: 1 } };
+
+
   const getAnimationValues = (pos: string) => {
     if (pos === "top") {
       return { yValInitial: { y: 50, opacity: 0 }, yValAnimate: { y: 0, opacity: 1 } };
@@ -70,7 +73,10 @@ function OptionsCards() {
     } else if (pos === "right") {
       return { yValInitial: { x: 80, opacity: 0 }, yValAnimate: { x: 0, opacity: 1 } } ;
     }
+
+    return defaultValues;
     }
+
 
   return (
     <div>
