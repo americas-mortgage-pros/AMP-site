@@ -12,10 +12,13 @@
     left: 0;
     right: 0;
     bottom: 0;
+    background-image: url("/src/images/new-gif1.gif");
+    /*
     background-image: url(https://imagescdn.homes.com/i2/ZdgnGcgmmvTsTUWb2dZ3vvWdTZdFzMngDgpCEGXNOHM/114/three-lakes-miami-fl.jpg?p=1);
+    filter: blur(15px);
+    */
     background-size: cover;
-    background-position: center;
-    filter: blur(15px); 
+    background-position: top;
     z-index: -1;
   }
   
@@ -60,7 +63,7 @@
   }
   
   .highlight {
-    color: #0085c9;
+    color: #f05e54;
   }
 
   .description {
