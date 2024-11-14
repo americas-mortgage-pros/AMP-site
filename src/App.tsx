@@ -8,6 +8,7 @@ import MortgageOptions from "./components/Mortgage Options/MortgageOptions";
 import ScrollAnimations from "./components/Blog/Blog"
 import ReviewAnimation from "./components/Reviews/Reviews";
 import SeeMoreReviews from "./components/Reviews/SeeMoreReviews";
+import Blog from "./components/Blog/Blog";
 
 function App() {
   const myColor: [string, string, string, string, string, string, string, string, string, string] = [ 
@@ -51,8 +52,6 @@ function App() {
       <ReviewAnimation></ReviewAnimation>
       </Container>
       <SeeMoreReviews></SeeMoreReviews>
-
-
     </MantineProvider>
   );
 }

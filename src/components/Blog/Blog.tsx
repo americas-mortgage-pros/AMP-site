@@ -1,11 +1,7 @@
-import { AnimatePresence, animate, motion, useMotionValue } from "framer-motion";
-import { Button } from "@mantine/core";
-import { useEffect, useState } from "react";
-import useMeasure from "react-use-measure";
 import BlogCard from "./BlogCard";
+import { Container, Grid } from "@mantine/core";
 
-function ScrollAnimations() {
-  const [showOverlay, setShowOverlay] = useState<string | null>(null);
+function Blog() {
 
   const textArray = [
     { link: "Understanding Your First Mortgage",
@@ -45,64 +41,21 @@ function ScrollAnimations() {
     },
   ];
 
-  const extendedArray = [...textArray, ...textArray.map((item, index) => 
-    ({...item,key: `${item.key}-${index + textArray.length}`
-    }))
-  ];
-
-  let [ref, { width }] = useMeasure();
-  const xTranslation = useMotionValue(0);
-
-  useEffect(() => {
-    let finalPosition = -width / 2 - 7; // 7 is the number of items you have
-
-    const controls = animate(xTranslation, [0, finalPosition], {
-      ease: "linear",
-      duration: 25,
-      repeat: Infinity,
-      repeatType: "loop",
-      repeatDelay: 0
-    });
-
-    return controls.stop;
-  }, [xTranslation, width]);
 
   return (
-    <motion.div style={{ position: "absolute", overflow: "unset", left: "0px", gap: "15px", display: "flex",
-        width: "100%", overflowX: "hidden", flexDirection: "row"
-      }} ref={ref}
-    >
-
+    <Container>
+    <Grid>
       { /*     CARD ARRAY STARTS HERE     */}
-      {extendedArray.map((item) => (
-        <motion.div key={item.key} onHoverStart={() => {
-            setShowOverlay(item.key);
-          }} 
-          onHoverEnd={() => {
-            setShowOverlay(null);
-          }}
-          style={{ position: "relative", minWidth: "380px", alignItems: "center", display: "flex", flexDirection: "column",
-            justifyContent: "center", objectFit: "cover", x: xTranslation
-          }}
+      {textArray.map((item) => (
+        <Grid.Col span={6} key={item.key}
         >
-          <AnimatePresence>
-            {showOverlay === item.key && ( <motion.div style={{
-                  position: "absolute", inset: 0, zIndex: 10, display: "flex", justifyContent: "center", alignItems: "center"
-                }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              >
-                <div style={{ position: "absolute", backgroundColor: "black", pointerEvents: "none", opacity: "0.50",
-                    height: "100%", width: "100%"
-                  }}
-                ></div>
-                <Button mx="lg" fullWidth size="md" style={{ zIndex: 10 }}>Read More</Button>
-              </motion.div>
-            )}
-          </AnimatePresence>
             <BlogCard item={item}></BlogCard>
-        </motion.div>
+        </Grid.Col>
       ))}
-    </motion.div>
+    </Grid>
+    </Container>
+
   );
 }
 
-export default ScrollAnimations;
+export default Blog;
