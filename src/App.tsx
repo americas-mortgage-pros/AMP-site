@@ -6,6 +6,8 @@ import Hero from "./components/Hero/Hero";
 import Cards from "./components/Cards/Cards";
 import MortgageOptions from "./components/Mortgage Options/MortgageOptions";
 import ScrollAnimations from "./components/Blog/Blog"
+import ReviewAnimation from "./components/Reviews/Reviews";
+import SeeMoreReviews from "./components/Reviews/SeeMoreReviews";
 
 function App() {
   const myColor: [string, string, string, string, string, string, string, string, string, string] = [ 
@@ -46,9 +48,11 @@ function App() {
       </Container>
       <MortgageOptions></MortgageOptions>
       <Container py="xl" my="xl">
-      <ScrollAnimations></ScrollAnimations>
+      <ReviewAnimation></ReviewAnimation>
       </Container>
-      <Container h="100vh"></Container>
+      <SeeMoreReviews></SeeMoreReviews>
+
+
     </MantineProvider>
   );
 }
